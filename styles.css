@@ -677,6 +677,7 @@ h1 {
 }
 
 .product-grid {
+  grid-template-columns: repeat(4, 1fr);
   gap: 28px;
 }
 
@@ -902,5 +903,19 @@ h1 {
 
   .nav-links {
     margin-top: 10px;
+  }
+}
+
+/* Product grid columns — placed last so they win over the generic .grid rules.
+   4-across on wide screens, 2-up on mid screens, single column on phones. */
+@media (max-width: 1100px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .product-grid {
+    grid-template-columns: 1fr;
   }
 }
